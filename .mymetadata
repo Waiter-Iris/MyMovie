@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="MyMovie Maven Webapp"
+  id="myeclipse.1489390227549"
+  context-root="/MyMovie"
+  j2ee-spec="6.0"
+  archive="MyMovie Maven Webapp.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

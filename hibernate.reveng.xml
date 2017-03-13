@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="area" schema="SCOTT" class="Area">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="history" schema="SCOTT" class="History">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="manager" schema="SCOTT" class="Manager">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="manager_video" schema="SCOTT" class="ManagerVideo">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="notify" schema="SCOTT" class="Notify">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="remark" schema="SCOTT" class="Remark">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="users" schema="SCOTT" class="Users">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="video" schema="SCOTT" class="Video">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+<table name="vtype" schema="SCOTT" class="Vtype">
+	<primary-key>
+		<generator class="sequence"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>
