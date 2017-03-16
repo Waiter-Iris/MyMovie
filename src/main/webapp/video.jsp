@@ -31,6 +31,5 @@
 		<s:submit value="上传"></s:submit>
 	</s:form>
 	
-
 </body>
 </html>

@@ -3,33 +3,58 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<!-- 指定国际化资源文件的baseName为uploadFile 
-	<constant name="struts.custom.i18n.resources" value="uploadVideo"></constant>
--->
+	<!-- 指定国际化资源文件的baseName为uploadFile <constant name="struts.custom.i18n.resources" 
+		value="uploadVideo"></constant> -->
 	<!-- 请求参数的编码方式 -->
 	<constant name="struts.i18n.encoding" value="utf-8" />
 	<!-- 设置可以使用!动态调用方法 -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<!-- 是否启用开发模式 -->
 	<!-- <constant name="struts.devMode" value="true" /> -->
-	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<constant name="struts.multipart.maxSize" value="10000000000000" />
 
 	<package name="default" namespace="/" extends="struts-default">
-	
+		
+		<!-- 视频分类的Action -->
 		<action name="showAllVtype" class="com.yztc.mymovie.action.VtypeAction">
 			<result>/index.jsp</result>
 		</action>
 
-		<action name="VideoAction" class="com.yztc.mymovie.action.VideoAction" method="uploadVideo">
+		<!-- 管理员的Action -->
+		<action name="managerAction" class="com.yztc.mymovie.action.ManagerAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<!-- 用户的Action -->
+		<action name="userAction" class="com.yztc.mymovie.action.UserAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<!-- 地区的Action -->
+		<action name="showAllArea" class="com.yztc.mymovie.action.AreaAction">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<!-- 用户视频表的Action -->
+		<action name="VideoAction" class="com.yztc.mymovie.action.VideoAction"
+			method="uploadVideo">
 			<!-- 使用fileUpload的拦截器 -->
 			<interceptor-ref name="fileUpload">
 				<!-- 设置允许上传的文件类型 -->
 				<param name="allowedTypes">video/mp4</param>
 				<!-- 设置允许上传文件的大小 -->
-				<param name="maximumSize">88888888</param>
+				<param name="maximumSize">888888888888</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 			<result>/success.jsp</result>
+		</action>
+
+		<!-- 历史的Action -->
+		<action name="HistoryAction" class="com.yztc.mymovie.action.HistoryAction">
+			<result name="success">/history.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 	</package>
 
