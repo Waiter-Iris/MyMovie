@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-<!-- 请求参数的编码方式 -->
+	<!-- 指定国际化资源文件的baseName为uploadFile 
+	<constant name="struts.custom.i18n.resources" value="uploadVideo"></constant>
+-->
+	<!-- 请求参数的编码方式 -->
 	<constant name="struts.i18n.encoding" value="utf-8" />
-<!-- 设置可以使用!动态调用方法 -->
-	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
-<!-- 是否启用开发模式 -->
-	<constant name="struts.devMode" value="true" />
+	<!-- 设置可以使用!动态调用方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 是否启用开发模式 -->
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<constant name="struts.multipart.maxSize" value="1000000000" />
 
+	<package name="default" namespace="/" extends="struts-default">
+	
+		<action name="showAllVtype" class="com.yztc.mymovie.action.VtypeAction">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="VideoAction" class="com.yztc.mymovie.action.VideoAction" method="uploadVideo">
+			<!-- 使用fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 设置允许上传的文件类型 -->
+				<param name="allowedTypes">video/mp4</param>
+				<!-- 设置允许上传文件的大小 -->
+				<param name="maximumSize">88888888</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result>/success.jsp</result>
+		</action>
+	</package>
 
 </struts>

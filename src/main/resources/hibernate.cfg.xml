@@ -27,19 +27,21 @@
 
 		<!-- 3 设置hibernate初始连接的 -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
+
 		<mapping resource="com/yztc/mymovie/entity/Area.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/History.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Manager.hbm.xml" />
-		<mapping resource="com/yztc/mymovie/entity/ManagerVideo.hbm.xml" />
+		<mapping
+			resource="com/yztc/mymovie/entity/ManagerVideo.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Notify.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Remark.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Users.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Video.hbm.xml" />
 		<mapping resource="com/yztc/mymovie/entity/Vtype.hbm.xml" />
-
+	
 	</session-factory>
-	
-	
-	
+
+
+
 
 </hibernate-configuration>

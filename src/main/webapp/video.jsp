@@ -5,7 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -25,7 +25,12 @@
 </head>
 
 <body>
-	<video src="movie.ogg" controls="controls"> 
-	</video>
+	<s:form action="VideoAction" method="post"
+		enctype="multipart/form-data" namespace="/">
+		<s:file label="文件" name="video"></s:file>
+		<s:submit value="上传"></s:submit>
+	</s:form>
+	
+
 </body>
 </html>
